@@ -13,7 +13,7 @@ English and German.
 
 -Mysql 
 
-# Installation
+# Installation / Implementation
 
 There are two way to use the language, in this file PHP type of was used to create the translation of the file. All this file/folders are stored in the __resources/lang__ folder where mostly the default language translation is located (en - English ).
 
@@ -78,15 +78,24 @@ There are two way to use the language, in this file PHP type of was used to crea
 
 -In the file, you can add __App::setLocale($request->language);__ the request language is the file that comes from the url. Note the name of the request should match.
 
+__USAGE__
 
 -The last section is to add the code to the views, Laravel provides two ways of adding the localisation,
     -Using the __@lang()__ method
     -and ( __() ) combination
 
-__USAGE__
 
-                <p>@lang(home.Name)</p>
-                <p>__(home.Name) </p>
+
+                <p>{{ @lang(home.Name) }}</p>
+                <p>{{ __(home.Name) }}</p>
 
 Which means, call the home.php file and search for the word __Name__ and translate to the language set 
 
+
+__CREDITS__
+
+-Laravel Documentation (https://laravel.com/docs/8.x/localization)
+
+-Markdown (https://www.markdownguide.org/basic-syntax/)
+
+-Localise (https://lokalise.com/blog/implementing-php-localization-complete-guide/)
