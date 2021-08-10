@@ -79,3 +79,14 @@ There are two way to use the language, in this file PHP type of was used to crea
 -In the file, you can add __App::setLocale($request->language);__ the request language is the file that comes from the url. Note the name of the request should match.
 
 
+-The last section is to add the code to the views, Laravel provides two ways of adding the localisation,
+    -Using the __@lang()__ method
+    -and ( __() ) combination
+
+__USAGE__
+
+                <p>@lang(home.Name)</p>
+                <p>__(home.Name) </p>
+
+Which means, call the home.php file and search for the word __Name__ and translate to the language set 
+
