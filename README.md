@@ -8,7 +8,9 @@ English and German.
 # Requirement
 
 -Laravel 8
+
 -PHP Version 7.3.27 and above
+
 -Mysql 
 
 # Installation
