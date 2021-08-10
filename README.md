@@ -31,7 +31,7 @@ There are two way to use the language, in this file PHP type of was used to crea
                     ];
 
 
--When the file is created and the structure is done __like above__, the translation of words starts, for example. On my home page there is a register and login on my navigation bar, The words to be translated are the __keys__ and the translated word is the value. The pantuation of the words is very important when doing localisation, if the word `name` is different from `Name`. So take note.
+-When the file is created and the structure is done __like above__, the translation of words starts, for example. On my home page there is a register and login on my navigation bar, The words to be translated are the __keys__ and the translated word is the value. The pantuation of the words is very important when doing localisation, so the word `name` is different from `Name`.
 
                 <?php
 
@@ -40,5 +40,26 @@ There are two way to use the language, in this file PHP type of was used to crea
                         `Password` => `Passwort`
                     ]
 
+-After the above files and folders are created, its time to create links. These links should be placed in the __routes/web.php__ fole in the routes web page. 
+
+
+                Route::redirect('/', '/en'); // fallback route
+
+                Route::group(['prefix' => '{language}'], function(){ 
+
+                    Route::get('/', function () {
+                        
+                        return view('welcome');
+                    });
+                    
+                    Route::get('/dashboard', function () {
+                        return view('dashboard');
+                    })->middleware(['auth'])->name('dashboard');
+                    
+                    require __DIR__.'/auth.php';
+                    
+                });
+
+-The first line is the Fallback Route that adds the shortname of the localisation standard shortcut name for the language. In this case, the defalt is English that is why its __en__, the second route is route that prefix the links so that it adds to the end of the link eg. [localhost/en/login](http://127.0.0.1:8000/en/login) which is in English and when changed to German it will be [localhost/de/login](http://127.0.0.1:8000/en/login) 
 
 
