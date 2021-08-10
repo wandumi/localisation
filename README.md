@@ -60,6 +60,22 @@ There are two way to use the language, in this file PHP type of was used to crea
                     
                 });
 
--The first line is the Fallback Route that adds the shortname of the localisation standard shortcut name for the language. In this case, the defalt is English that is why its __en__, the second route is route that prefix the links so that it adds to the end of the link eg. [localhost/en/login](http://127.0.0.1:8000/en/login) which is in English and when changed to German it will be [localhost/de/login](http://127.0.0.1:8000/en/login) 
+-The first line is the Fallback Route that adds the shortname of the localisation standard shortcut name for the language. In this case, the defalt is English that is why its __en__, the second route is route that prefix the links so that it adds to the end of the link eg. 
+
+                -[localhost/en/login](http://127.0.0.1:8000/en/login) 
+
+                -[localhost/de/login](http://127.0.0.1:8000/en/login) 
+
+-When all this are done, Middleware is on of the features that is added to have a source of truth, instead of creating the login in the __web.php__. The artisan command is used create the middleware, 
+
+                php artisan make:middleware nameofthemiddleware
+
+-It creates the file in the middleware folder that is found in the __app\Http\Middleware\nameofthemiddleware__, and register it in the __App\Http\kenel__ and search for 
+
+                protected $middlewareGroup [
+                    \App\Http\Middleware\nameofthemiddleware::class,
+                ]
+
+-In the file, you can add __App::setLocale($request->language);__ the request language is the file that comes from the url. Note the name of the request should match.
 
 
