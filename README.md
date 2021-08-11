@@ -91,7 +91,7 @@ __USAGE__
 
 Which means, call the home.php file and search for the word __Name__ and translate to the language set 
 
-__Company Logo__
+__COMPANY LOGO__
 
 ![Growmytree Logo](https://github.com/wandumi/localisation/blob/assets/growtwo.png)
 
