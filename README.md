@@ -91,7 +91,10 @@ __USAGE__
 
 Which means, call the home.php file and search for the word __Name__ and translate to the language set 
 
-![Growmytree Logo](public/images/growmytree.png)
+![Growmytree Logo](./public/images/growmytree.png)
+
+-am trying this
+
 
 
 __CREDITS__
